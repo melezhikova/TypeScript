@@ -2,6 +2,7 @@ import Cart from './service/Cart';
 import Book from './domain/Book';
 import MusicAlbum from './domain/MusicAlbum';
 import Movie from './domain/Movie';
+import Buyable from './domain/Buyable';
 
 const cart = new Cart();
 console.log(cart.items);
@@ -15,7 +16,7 @@ console.log(cart.items);
 const sum: number = cart.totalSum();
 console.log(sum);
 
-const sumDiscont: number = cart.totalWithDiscont(0.2);
+const sumDiscont: Buyable = cart.totalWithDiscont(0.2);
 console.log(sumDiscont);
 
 cart.remove(1001);

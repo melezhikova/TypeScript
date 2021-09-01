@@ -19,24 +19,23 @@ export default class Cart {
         return sum;
     }
 
-    totalWithDiscont(discont: number): number {
-        let sum: number = this.totalSum();
-        return sum - ( sum * discont );
+    totalWithDiscont(discont: number): Buyable {
+        const result = this._items.reduce((acc: Buyable, item: Buyable, idx: number, arr: Buyable[]) => {
+            acc.price + item.price;
+            if (idx === arr.length - 1) {
+                return acc.price - acc.price * discont;
+              } else {
+                return acc;
+              }
+        })
+        return result;
     }
 
     remove(id: number): void {
-        let index: number = -1;
-        for (let i = 0; i < this._items.length; i += 1) {
-            let item = this._items[i];
-            if (item.id === id) {
-                index = i;  
-            }
-        };
-        delete this._items[index];
-        let newArray: any = [];
-        this._items.forEach((item) => {
-            newArray.push(item);
-        })
+        const newArray: Buyable[] = this._items.filter((item) => {
+            return item.id !== id;
+        });
+
         this._items = newArray;
     }
 }
