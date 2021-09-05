@@ -12,24 +12,9 @@ export default class Cart {
     }
 
     totalSum(): number {
-        // let sum: number = 0;
-        // this._items.forEach((item) => {
-        //     sum += item.price;
-        // })
-        // return sum;
         return this._items.reduce((acc: number, item: Buyable) => {
-            acc + item.price, 0
-        })
-
-        // const sum = this._items.reduce((acc: Buyable, item: Buyable, idx: number, arr: Buyable[]) => {
-        //     acc.price += item.price;
-        //     if (idx === arr.length - 1) {
-        //       return acc.price;
-        //     } else {
-        //       return acc;
-        //     }
-        // })
-        // return sum;
+            return acc + item.price}, 0
+        )
     }
 
     totalWithDiscont(discont: number): number {

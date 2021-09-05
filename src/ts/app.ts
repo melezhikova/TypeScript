@@ -16,7 +16,7 @@ console.log(cart.items);
 const sum: number = cart.totalSum();
 console.log(sum);
 
-const sumDiscont: Buyable = cart.totalWithDiscont(0.2);
+const sumDiscont: number = cart.totalWithDiscont(0.2);
 console.log(sumDiscont);
 
 cart.remove(1001);
